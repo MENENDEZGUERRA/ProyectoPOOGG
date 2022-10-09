@@ -39,5 +39,40 @@ public class controlador {
         }
     }
 
+
+
+    //Add a review to selected place
+    public void addReview(lugar _lugar){
+        System.out.println("\nEnter User Name");
+        String userName = sn.next();
+        while(userName != null){
+            System.out.println("\nEnter Date day");
+            int DateDay = sn.nextInt();
+            System.out.println("\nEnter Month number");
+            int DateMonth = sn.nextInt();
+            System.out.println("\nEnter date Year");
+            int DateYear = sn.nextInt();
+            System.out.println("\nEnter Number of stars (1-5)");
+            int NumberofStars = sn.nextInt();
+            System.out.println("\nEnter Review");
+            String review = sn.next();
+
+            reviews newReview = new reviews(userName,DateDay,DateMonth,DateYear,NumberofStars,review);
+            _lugar.info.add(newReview);
+            break;
+        }
+
+        //Testing, errase later
+        System.out.println("\nAll reviews for " + _lugar.getNombre());
+        for(int i = 0; i < _lugar.info.size(); i++) { 
+            reviews reviewSel = _lugar.info.get(i); 
+            System.out.print(i + ". User: " + reviewSel.getUsuario() + "\n");
+            System.out.print("Stars: " + reviewSel.getStars() + "\n");
+            System.out.print("Review: " + reviewSel.getReviewText() + "\n");
+            System.out.print("Published: " + reviewSel.getDay() + "/" + reviewSel.getMonth() + "/" + reviewSel.getYear() + "\n");
+        }
+    }
+
+
     
 }
