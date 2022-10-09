@@ -8,16 +8,44 @@ public class lugar {
     int tipo;
 
 
+    //Setters
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
 
-    // File filename = new File(nombre+".txt");
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
 
-    // lugar (String nameString, String direccionString, int type){
-    //     this.nombre = nameString;
-    //     this.direccion = direccionString;
-    //     this.tipo = type;
+    //Getters
+    public String getNombre() {
+        return nombre;
+    }
 
-    // }
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public ArrayList<reviews> getStats() {
+        return info;
+    }
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    File filename = new File(nombre+".txt");
+
+    lugar (String nameString, String direccionString, int type){
+        this.nombre = nameString;
+        this.direccion = direccionString;
+        this.tipo = type;
+
+    }
 
     // public void leer() throws FileNotFoundException{
     //     //crea los items que tengo en mi archivo
